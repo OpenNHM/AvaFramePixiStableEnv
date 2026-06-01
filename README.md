@@ -19,33 +19,23 @@ guide](https://pixi.sh/latest/#installation) for alternatives.
 
 ## Getting Started
 
-Clone this repository and install the environment:
-
 ```bash
 git clone https://github.com/avaframe/AvaFramePixiStableEnv.git
 cd AvaFramePixiStableEnv
-pixi install
-```
-
-Activate the environment and launch QGIS with AvaFrame available:
-
-```bash
-pixi shell
-qgis
-```
-
-Or run a single command without activating the shell:
-
-```bash
 pixi run qgis
 ```
 
+Install the [OpenNHM QGis
+Connector](https://github.com/OpenNHM/OpenNHMQGisConnector) plugin in QGIS
+(Plugins > Manage and Install Plugins) to access AvaFrame workflows from the
+QGIS interface.
+
 ## Environments
 
-| Environment    | Contents                        |
-| -------------- | ------------------------------- |
-| `default`      | QGIS + latest stable AvaFrame   |
-| `qgis-stable`  | Same as `default` (alias)       |
+| Environment   | Contents                      |
+| ------------- | ----------------------------- |
+| `default`     | QGIS + latest stable AvaFrame |
+| `qgis-stable` | Same as `default` (alias)     |
 
 ## Updating
 
