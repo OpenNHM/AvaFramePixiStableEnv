@@ -1,0 +1,20 @@
+[tool.pixi.workspace]
+channels = ["https://prefix.dev/conda-forge"]
+platforms = ["linux-64", "win-64", "osx-64", "osx-arm64"]
+
+[tool.pixi.dependencies]
+python = ">=3.9,<3.14"
+pixi-pycharm = "*"
+
+# Feature: QGIS with compatible numpy version
+[tool.pixi.feature.qgis.dependencies]
+numpy = "<2.0"
+qgis = "*"
+
+# Feature: latest stable AvaFrame release from PyPI
+[tool.pixi.feature.stable.pypi-dependencies]
+avaframe = "*"
+
+[tool.pixi.environments]
+default = ["qgis", "stable"]
+qgis-stable = ["qgis", "stable"]
