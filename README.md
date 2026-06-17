@@ -20,7 +20,7 @@ guide](https://pixi.sh/latest/#installation) for alternatives.
 ## Getting Started
 
 ```bash
-git clone https://github.com/avaframe/AvaFramePixiStableEnv.git
+git clone https://github.com/OpenNHM/AvaFramePixiStableEnv.git
 cd AvaFramePixiStableEnv
 pixi run qgis
 ```
