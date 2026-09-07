@@ -11,6 +11,11 @@ pixi-pycharm = "*"
 numpy = "<2.0"
 qgis = "*"
 
+# Ship a self-contained Mesa so QGIS can open a GL context without the host
+# GL stack. Provides the libglvnd GLX/EGL vendor + llvmpipe software renderer.
+[tool.pixi.feature.qgis.target.linux-64.dependencies]
+mesalib = "*"
+
 # Feature: latest stable AvaFrame release from PyPI
 [tool.pixi.feature.stable.pypi-dependencies]
 avaframe = "*"
@@ -18,3 +23,9 @@ avaframe = "*"
 [tool.pixi.environments]
 default = ["qgis", "stable"]
 qgis-stable = ["qgis", "stable"]
+
+# conda Qt has no wayland plugin, so run on xcb/Xwayland. mesalib provides
+# the GL vendor; force software GL to skip the futile hardware-driver probe
+# (conda-forge ships no radeonsi for AMD).
+[tool.pixi.target.linux-64.tasks]
+qgis = "QT_QPA_PLATFORM=xcb LIBGL_ALWAYS_SOFTWARE=1 qgis"
